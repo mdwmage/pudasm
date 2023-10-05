@@ -21,9 +21,11 @@ Designed to be as small as possible. Uses only rust std
 
 Clone repo & `cargo build --release` and move the "pudc" file elsewhere, such as on your $PATH.
 
-To run a PUD-ASM file, simply run `pudc /path/to/file`
-
 ## Using
+
+pudc accepts any file, but I like to use .psm as a file ending to organize things
+
+To run a PUD-ASM file, simply run `pudc /path/to/file`
 
 ## Learning
 
