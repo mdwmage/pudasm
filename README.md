@@ -29,7 +29,7 @@ To run a PUD-ASM file, simply run `pudc /path/to/file`
 
 ## Learning
 
-All keywords are specified in the [main file](./test.psm) of the program.  
+All keywords are specified in the [main file](./src/main.rs) of the program.  
 As well, an example program, which allocates two numbers, adds them and displays the result can be found [here](./test.psm)
 
 More learning resources may be made later
