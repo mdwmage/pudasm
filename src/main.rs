@@ -35,12 +35,12 @@ fn compute(path: &str) {
     let file = fs::read_to_string(path).expect("File not readable");
     for line in file.lines() {
         let instructions: Vec<&str> = line.split(' ').collect();
-        match instructions[0] {
+        match instructions[0].trim() {
             "P" => mem[ptr] = read_u32(instructions[1]),
             "U" => mem[ptr] = 0,
             "D" => println!("{}", mem[ptr]),
             "A" => mem[ptr] = mem[read_usize(instructions[1])] + mem[read_usize(instructions[2])],
-            "S" => mem[ptr] = if read_usize(instructions[1]) > read_usize(instructions[2]) { mem[read_usize(instructions[1])] - mem[read_usize(instructions[2])] } else { mem[read_usize(instructions[2])] - mem[read_usize(instructions[1])] },
+            "S" => mem[ptr] = mem[read_usize(instructions[1])] - mem[read_usize(instructions[2])]
             "M" => ptr = read_usize(instructions[1]),
             _ => panic!("Invalid keyword"),
         }
