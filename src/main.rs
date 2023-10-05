@@ -40,7 +40,7 @@ fn compute(path: &str) {
             "U" => mem[ptr] = 0,
             "D" => println!("{}", mem[ptr]),
             "A" => mem[ptr] = mem[read_usize(instructions[1])] + mem[read_usize(instructions[2])],
-            "S" => mem[ptr] = mem[read_usize(instructions[1])] - mem[read_usize(instructions[2])]
+            "S" => mem[ptr] = mem[read_usize(instructions[1])] - mem[read_usize(instructions[2])],
             "M" => ptr = read_usize(instructions[1]),
             _ => panic!("Invalid keyword"),
         }
