@@ -21,7 +21,7 @@ Designed to be as small as possible. Uses only rust std
 
 Clone repo & `cargo build --release` and move the "pudc" file elsewhere, such as on your $PATH.
 
-## Using
+### Using
 
 pudc accepts any file, but I like to use .psm as a file ending to organize things
 
