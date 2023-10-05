@@ -19,7 +19,9 @@ Designed to be as small as possible. Uses only rust std
 
 ### Building
 
-Clone repo & `cargo build --release`
+Clone repo & `cargo build --release` and move the "pudc" file elsewhere, such as on your $PATH.
+
+To run a PUD-ASM file, simply run `pudc /path/to/file`
 
 ## Using
 
