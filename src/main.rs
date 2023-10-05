@@ -3,12 +3,12 @@
 // Reads file from cla and computes
 
 /* Instructions
-**  P(i32), // Push
-**  U(i32), // Pop
-**  D(i32) // Display
-**  A(i32, i32), // Add
-**  S(i32, i32), // Subtract
-**  M(i32) // Move
+**  P(u32) // Push (Pushes number to current location in memory)
+**  U(u32) // Pop (Resets a number to 0 at current location)
+**  D(u32) // Display (Print value at specified location)
+**  A(u32, u32) // Add (Adds two values in memory and pushes result to current location)
+**  S(u32, u32) // Subtract (Subtracts two values in memory and pushes result to current location)
+**  M(usize) // Move (Moves pointer to new location in memory)
 */
 
 mod utilities;
