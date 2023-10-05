@@ -1,7 +1,30 @@
-# pudasm
+# PUD-ASM
 
-A personal esoteric programming language.
-Designed to be as small as possible, with extremely minimal syntax
+A personal project & programming language.
 
-> [!IMPORTANT]
-> This is a personal project created for fun. It is not meant to be efficient or useful. It may gain proper utility/functionality in the future
+## About
+
+PUD-ASM is a language that appears like an incredibly minimal, low level language. It is not.  
+PUD-ASM is a esoteric programming language. It has practically zero use and functionality. It can't even print characters (not yet).
+
+## Why
+
+I needed a personal project, and wanted to do something with rust. I chose this.
+My personal goal is to fully implement a sort of programming language, that uses single characters as keywords.
+
+## pudc
+
+The compiler for PUD-ASM.
+Designed to be as small as possible. Uses only rust std
+
+### Building
+
+Clone repo & `cargo build --release`
+
+## Using
+
+## Learning
+
+All keywords are specified in the [main file](./test.psm) of the program. As well, an example program, which allocates two numbers, adds them and displays the result can be found [here](./test.psm)
+
+More learning resources may be made later
