@@ -23,8 +23,9 @@ fn main() {
 
 fn check_args(args: Vec<String>) {
     match args[1].as_str() {
-        "help" => utilities::print_help(),
-        "read" => utilities::read(&args[2]),
+        "help" | "h" => utilities::print_help(),
+        "read" | "r" => utilities::read(&args[2]),
+        "doc" | "docs" | "d" => utilities::docs(),
         _ => compute(&args[1]),
     }
 }
