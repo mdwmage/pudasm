@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "fetch"
+name = "pudc"
 version = "0.1.0"

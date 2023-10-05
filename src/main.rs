@@ -2,11 +2,6 @@
 // Mimics an instruction set
 // Reads file from cla and computes
 
-mod utilities;
-
-use std::env;
-use std::fs;
-
 /* Instructions
 **  P(i32), // Push
 **  U(i32), // Pop
@@ -15,6 +10,11 @@ use std::fs;
 **  S(i32, i32), // Subtract
 **  M(i32) // Move
 */
+
+mod utilities;
+
+use std::env;
+use std::fs;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -40,23 +40,12 @@ fn compute(path: &str) {
             "U" => mem[ptr] = 0,
             "D" => println!("{}", mem[ptr]),
             "A" => mem[ptr] = mem[read_usize(instructions[1])] + mem[read_usize(instructions[2])],
-            "S" => {
-                mem[ptr] = if read_usize(instructions[1]) > read_usize(instructions[2]) {
-                    mem[read_usize(instructions[1])] - mem[read_usize(instructions[2])]
-                } else {
-                    mem[read_usize(instructions[2])] - mem[read_usize(instructions[1])]
-                }
-            }
+            "S" => mem[ptr] = if read_usize(instructions[1]) > read_usize(instructions[2]) { mem[read_usize(instructions[1])] - mem[read_usize(instructions[2])] } else { mem[read_usize(instructions[2])] - mem[read_usize(instructions[1])] },
             "M" => ptr = read_usize(instructions[1]),
-            _ => todo!(),
+            _ => panic!("Invalid keyword"),
         }
     }
 }
 
-fn read_usize(input: &str) -> usize {
-    input.trim().parse().expect("Failed to parse and integer")
-}
-
-fn read_u32(input: &str) -> u32 {
-    input.trim().parse().expect("Failed to parse and integer")
-}
+fn read_usize(input: &str) -> usize { input.trim().parse().expect("Failed to parse and integer") }
+fn read_u32(input: &str) -> u32 { input.trim().parse().expect("Failed to parse and integer") }
