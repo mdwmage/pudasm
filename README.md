@@ -14,7 +14,7 @@ My personal goal is to fully implement a sort of programming language, that uses
 
 ## pudc
 
-The compiler for PUD-ASM.
+The interpreter for PUD-ASM.
 Designed to be as small as possible. Uses only rust std
 
 ### Building
