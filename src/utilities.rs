@@ -7,8 +7,9 @@ pub fn print_help() {
     println!("-----------------------");
     println!(
         "Reads in psm files (Any file with written with correct PUD-ASM syntax). Prints output
-        help, --help, -h : prints this message
-        doc, docs -d : Syntax guide"
+        help, h : prints this message
+        doc, docs, d : Syntax guide
+        read, r : print file contents. Needs a path to file to work"
     );
 }
 
