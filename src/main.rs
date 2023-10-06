@@ -10,6 +10,7 @@
 **  S(u32, u32) // Subtract (Subtracts two values in memory and pushes result to current location)
 **  M(usize) // Move (Moves pointer to new location in memory)
 **  F(usize, PUDASM keyword) // If (Runs following command if value at index is true(Value other than zero))
+**  - // Comment. Does nothing
 */
 
 mod utilities;
