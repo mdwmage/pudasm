@@ -24,7 +24,8 @@ fn main() {
     let mut mem: [u32; 128] = [0; 128];
     let file = fs::read_to_string(args[1].as_str()).expect("File not readable");
     for line in file.lines() {
-        compute(&mut mem, &mut ptr, line);
+        let instructions = line.split(' ').collect();
+        compute(&mut mem, &mut ptr, instructions);
     }
 }
 
@@ -37,8 +38,7 @@ fn check_args(args: &Vec<String>) {
     }
 }
 
-fn compute(mem: &mut [u32; 128], ptr: &mut usize, line: &str) {
-        let instructions: Vec<&str> = line.split(' ').collect();
+fn compute(mem: &mut [u32; 128], ptr: &mut usize, instructions: Vec<&str>) {
         match instructions[0].trim() {
             "P" => mem[*ptr] = read_u32(instructions[1]),
             "U" => mem[*ptr] = 0,
@@ -47,6 +47,14 @@ fn compute(mem: &mut [u32; 128], ptr: &mut usize, line: &str) {
             "S" => mem[*ptr] = mem[read_usize(instructions[1])] - mem[read_usize(instructions[2])],
             "M" => *ptr = read_usize(instructions[1]),
             "-" => (),
+            "F" => {
+                if mem[read_usize(instructions[1])] > 0 {
+                    let mut instructions = instructions;
+                    instructions.remove(0);
+                    instructions.remove(0);
+                    compute(mem, ptr, instructions);
+                }
+            }
             _ => panic!("Invalid keyword"),
     }
 }
