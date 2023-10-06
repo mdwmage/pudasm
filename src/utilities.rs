@@ -6,8 +6,10 @@ pub fn print_help() {
     println!("/path/to/file.psm");
     println!("-----------------------");
     println!(
-        "Reads in psm files (Any file with written with correct PUD-ASM syntax). Prints output"
-    )
+        "Reads in psm files (Any file with written with correct PUD-ASM syntax). Prints output
+        help, --help, -h : prints this message
+        doc, docs -d : Syntax guide"
+    );
 }
 
 pub fn read(path: &str) {
