@@ -7,16 +7,19 @@ pub fn print_help() {
     println!("-----------------------");
     println!(
         "Reads in psm files (Any file with written with correct PUD-ASM syntax). Prints output
+UTILITIES:
         help, h : prints this message
         doc, docs, d : Syntax guide
         read, r : print file contents. Needs a path to file to work"
     );
+    std::process::exit(0);
 }
 
 pub fn read(path: &str) {
     let file = fs::read_to_string(path).expect("File not readable");
     println!("File: {}", path);
-    println!("With text:\n{}", file)
+    println!("With text:\n{}", file);
+    std::process::exit(0);
 }
 
 pub fn docs() {
@@ -37,4 +40,5 @@ Running PUD-ASM files:
 
 To run a PUD-ASM file, invoke the pudc compiler and give the path to the .psm file as an argument";
     println!("{docs}");
+    std::process::exit(0);
 }
